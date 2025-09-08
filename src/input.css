@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+
+@theme{
+    --color-dawn: #a4745e
+
+
+}
+
+    
+.banner{
+    position: relative;
+    height: 70vh;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(background_1.jpg);
+    background-size: cover;
+
+    mask-image: url(Real_splatter.gif);
+    mask-repeat: no-repeat; 
+    mask-size: 180vw min(80vh, 40rem) ;
+    mask-position: center;
+
+
+}
+
+.name_font{
+    font-family: "Unbounded";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.crimson_font> {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.crimson_italic> {
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+}
+
+@layer components {
+  .button_1 {
+    @apply inline-block text-white px-6 py-2 rounded-lg shadow-md transition transform 
+           hover:scale-105 hover:shadow-xl my-5;
+    background: linear-gradient(135deg, #505d7c, #29274d);
+  }
+  .button_1:hover {
+    background: linear-gradient(135deg, #9c7966, #021212) ;
+  }
+  .row_{
+    @apply items-center gap-4 text-gray-700 text-lg leading-relaxed rounded-lg
+    border-2 border-gray-500 py-3 flex-col sm:flex-row sm:items-center gap-3;
+  }
+  .horizontal_breaker{
+    @apply max-w-md h-1 bg-dawn mx-auto my-4 rounded-full;
+  }
+}
